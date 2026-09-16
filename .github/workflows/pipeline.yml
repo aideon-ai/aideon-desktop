@@ -70,7 +70,7 @@ jobs:
             pkg-config libglib2.0-dev libgtk-3-dev libayatana-appindicator3-dev \
             librsvg2-dev libwebkit2gtk-4.1-dev libsoup-3.0-dev
 
-      - uses: actions-rust-lang/setup-rust-toolchain@166cdcfd11aee3cb47222f9ddb555ce30ddb9659 # v1
+      - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2.0.0
         with:
           components: rustfmt, clippy
 
@@ -115,7 +115,7 @@ jobs:
       # (keyed on Cargo.lock + rustc, caches the workspace target at repo root).
       # The previous manual cache pointed at src-tauri/target — the wrong dir,
       # since src-tauri is a workspace member and builds go to the root /target.
-      - uses: actions-rust-lang/setup-rust-toolchain@166cdcfd11aee3cb47222f9ddb555ce30ddb9659 # v1
+      - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2.0.0
 
       - run: pnpm install --frozen-lockfile
 
@@ -144,7 +144,7 @@ jobs:
             librsvg2-dev libwebkit2gtk-4.1-dev libsoup-3.0-dev \
             webkit2gtk-driver xvfb
 
-      - uses: actions-rust-lang/setup-rust-toolchain@166cdcfd11aee3cb47222f9ddb555ce30ddb9659 # v1
+      - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2.0.0
 
       - name: Cache tauri-driver install
         id: cache-tauri-driver-webdriver
@@ -195,7 +195,7 @@ jobs:
             librsvg2-dev libwebkit2gtk-4.1-dev libsoup-3.0-dev \
             webkit2gtk-driver xvfb
 
-      - uses: actions-rust-lang/setup-rust-toolchain@166cdcfd11aee3cb47222f9ddb555ce30ddb9659 # v1
+      - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2.0.0
 
       - name: Cache tauri-driver install
         id: cache-tauri-driver-tier2
@@ -232,7 +232,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'pnpm'
 
-      - uses: actions-rust-lang/setup-rust-toolchain@166cdcfd11aee3cb47222f9ddb555ce30ddb9659 # v1
+      - uses: actions-rust-lang/setup-rust-toolchain@ecabd13d1c56bd1345c230e542e9144811ad706f # v2.0.0
 
       - run: pnpm install --frozen-lockfile
 
